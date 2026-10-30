@@ -136,7 +136,15 @@ public class Persona {
     }
 
     public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
+        if (fecha_nacimiento != null
+            && !fecha_nacimiento.isAfter(LocalDate.now())
+            && !fecha_nacimiento.isBefore(LocalDate.of(1900, 1, 1))) {
+
         this.fecha_nacimiento = fecha_nacimiento;
+
+        } else {
+            System.out.println("Error: La fecha de nacimiento no es válida.");
+        }
     }
     
     @Override
