@@ -112,4 +112,16 @@ public class Mascota {
             System.out.println("Error: La mascota debe tener un dueño.");
         }
     }
+    @Override
+    public String toString() {
+        return "ID: " + id_mascota
+                + " | Nombre: " + nombre
+                + " | Especie: " + especie
+                + " | Raza: " + raza
+                + " | Peso: " + peso + " kg"
+                + " | Sexo: " + sexo
+                + " | Dueño: " + duenio.getNombre()
+                + " " + duenio.getPaterno()
+                + " | DNI: " + duenio.getNro_documento();
+    }
 }
