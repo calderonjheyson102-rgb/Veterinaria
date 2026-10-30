@@ -101,4 +101,15 @@ public class Mascota {
             System.out.println("Error: El sexo debe ser Macho o Hembra.");
         }
     }
+    public Cliente getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(Cliente duenio) {
+        if (duenio != null) {
+            this.duenio = duenio;
+        } else {
+            System.out.println("Error: La mascota debe tener un dueño.");
+        }
+    }
 }
