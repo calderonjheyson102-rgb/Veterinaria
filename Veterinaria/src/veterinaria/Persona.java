@@ -143,7 +143,7 @@ public class Persona {
         this.fecha_nacimiento = fecha_nacimiento;
 
         } else {
-            System.out.println("Error: La fecha de nacimiento no es válida.");
+            System.out.println("Error: La fecha de nacimiento no es valida.");
         }
     }
     
