@@ -44,4 +44,15 @@ public class Mascota {
             System.out.println("Error: El ID debe ser mayor que cero.");
         }
     }
+     public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        if (nombre != null && nombre.trim().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{2,}")) {
+            this.nombre = nombre.trim();
+        } else {
+            System.out.println("Error: El nombre debe contener al menos 2 letras.");
+        }
+    }
 }
