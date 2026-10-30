@@ -66,4 +66,15 @@ public class Mascota {
             System.out.println("Error: Ingrese una especie valida. EJ (PERRO, GATO) ");
         }
     }
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        if (raza != null && !raza.trim().isEmpty()) {
+            this.raza = raza.trim();
+        } else {
+            System.out.println("Error: La raza no puede estar vacaa.");
+        }
+    }
 }
