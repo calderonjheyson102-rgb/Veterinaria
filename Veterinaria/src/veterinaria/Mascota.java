@@ -77,4 +77,15 @@ public class Mascota {
             System.out.println("Error: La raza no puede estar vacaa.");
         }
     }
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        if (Double.isFinite(peso) && peso > 0 && peso <= 155) {
+            this.peso = peso;
+        } else {
+            System.out.println("Error: El peso debe ser mayor que cero y no superar los 155 kg.");
+        }
+    }
 }
