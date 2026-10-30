@@ -55,4 +55,15 @@ public class Mascota {
             System.out.println("Error: El nombre debe contener al menos 2 letras.");
         }
     }
+    public String getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        if (especie != null && especie.trim().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,}")) {
+            this.especie = especie.trim();
+        } else {
+            System.out.println("Error: Ingrese una especie valida. EJ (PERRO, GATO) ");
+        }
+    }
 }
