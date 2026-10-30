@@ -45,7 +45,7 @@ public class Cliente extends Persona{
         if (correo != null && correo.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
             this.correo = correo;
         } else {
-            System.out.println("Error: El correo electrónico no tiene un formato válido.");
+            System.out.println("Error: El correo electronico no tiene un formato valido.");
         }
     }
     
