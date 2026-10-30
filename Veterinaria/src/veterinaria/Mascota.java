@@ -32,4 +32,16 @@ public class Mascota {
 
     public Mascota() {
     }
+    
+    public int getId_mascota() {
+        return id_mascota;
+    }
+
+    public void setId_mascota(int id_mascota) {
+        if (id_mascota > 0) {
+            this.id_mascota = id_mascota;
+        } else {
+            System.out.println("Error: El ID debe ser mayor que cero.");
+        }
+    }
 }
