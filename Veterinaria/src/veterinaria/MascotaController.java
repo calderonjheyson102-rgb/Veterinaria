@@ -51,6 +51,16 @@ public class MascotaController {
 
         return true;
     }
-    
-    
+    // Buscar mascota
+    public Mascota buscarPorId(int id) {
+
+        for (Mascota m : mascotas) {
+            if (m.getId_mascota() == id) {
+                return m;
+            }
+        }
+
+        return null;
+    }
+ 
 }
