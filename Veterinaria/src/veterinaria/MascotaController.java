@@ -4,10 +4,17 @@
  */
 package veterinaria;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author JHEY
  */
 public class MascotaController {
+    private ArrayList<Mascota> mascotas;
+    
+    public MascotaController() {
+        mascotas = new ArrayList<>();
+    }
     
 }
