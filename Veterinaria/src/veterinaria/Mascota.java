@@ -16,4 +16,20 @@ public class Mascota {
     private double peso;
     private String sexo;
     private Cliente duenio;
+    
+    public Mascota(int id_mascota, String nombre, String especie,
+        String raza, double peso, String sexo, Cliente duenio) {
+
+        setId_mascota(id_mascota);
+        setNombre(nombre);
+        setEspecie(especie);
+        setRaza(raza);
+        setPeso(peso);
+        setSexo(sexo);
+        setDuenio(duenio);
+    }
+    
+
+    public Mascota() {
+    }
 }
