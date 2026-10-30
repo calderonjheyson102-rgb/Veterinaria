@@ -6,6 +6,7 @@ package veterinaria;
 
 /**
  *
+ * @author JHEY
  * @author natal
  */
 public class Veterinaria {
