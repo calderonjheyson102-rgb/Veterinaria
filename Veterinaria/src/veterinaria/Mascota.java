@@ -9,5 +9,11 @@ package veterinaria;
  * @author JHEY
  */
 public class Mascota {
-    
+    private int id_mascota;
+    private String nombre;
+    private String especie;
+    private String raza;
+    private double peso;
+    private String sexo;
+    private Cliente duenio;
 }
