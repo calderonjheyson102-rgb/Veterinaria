@@ -88,4 +88,17 @@ public class Mascota {
             System.out.println("Error: El peso debe ser mayor que cero y no superar los 155 kg.");
         }
     }
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        if (sexo != null && (
+                sexo.equalsIgnoreCase("Macho")
+                || sexo.equalsIgnoreCase("Hembra"))) {
+            this.sexo = sexo;
+        } else {
+            System.out.println("Error: El sexo debe ser Macho o Hembra.");
+        }
+    }
 }
