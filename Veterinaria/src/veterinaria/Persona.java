@@ -67,7 +67,7 @@ public class Persona {
             }
 
         } else {
-            System.out.println("Error: El numero de documento debe contener solo números");
+            System.out.println("Error: El numero de documento debe contener solo numeros");
         }
     }
 
@@ -76,7 +76,19 @@ public class Persona {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre != null && nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]+")) // Valida que sean solo letras
+        {
+            if (nombre.trim().length() >= 2) 
+            {
+                this.nombre = nombre;
+            } else 
+            {
+                System.out.println("ERROR: EL NOMBRE DEBE TENER MINIMO 2 CARACTERES");
+            }
+        } else 
+        {
+            System.out.println("ERROR, EL NOMBRE DEBE CONTENER SOLO LETRAS");
+        } 
     }
 
     public String getPaterno() {
@@ -84,7 +96,19 @@ public class Persona {
     }
 
     public void setPaterno(String paterno) {
-        this.paterno = paterno;
+        if (paterno != null && paterno.matches("[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]+")) // Valida que sean solo letras
+        {
+            if(paterno.trim().length()>=2)
+            {
+                this.paterno = paterno.trim();
+            }else{
+                
+                System.out.println("ERROR, El apellido paterno debe tener al menos 2 caracteres");
+            }
+        }else 
+        {
+            System.out.println("ERROR, EL APELLIDO PATERNO DEBE CONTENER SOLO LETRAS");
+        }
     }
 
     public String getMaterno() {
@@ -92,7 +116,19 @@ public class Persona {
     }
 
     public void setMaterno(String materno) {
-        this.materno = materno;
+        if (materno != null && materno.matches("[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]+")) // Valida que sean solo letras
+        {
+            if(materno.trim().length()>=2)
+            {
+                this.materno = materno.trim();
+            }else{
+                
+                System.out.println("ERROR, El apellido materno debe tener al menos 2 caracteres");
+            }
+        }else 
+        {
+            System.out.println("ERROR, EL APELLIDO MATERNO DEBE CONTENER SOLO LETRAS");
+        }
     }
 
     public LocalDate getFecha_nacimiento() {
