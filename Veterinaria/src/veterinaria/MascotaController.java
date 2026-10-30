@@ -62,5 +62,17 @@ public class MascotaController {
 
         return null;
     }
+    // Listar mascotas
+    public void listarMascotas() {
+
+        if (mascotas.isEmpty()) {
+            System.out.println("No hay mascotas registradas");
+            return;
+        }
+
+        for (Mascota m : mascotas) {
+            System.out.println(m);
+        }
+    }
  
 }
