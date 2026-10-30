@@ -17,13 +17,32 @@ public class Persona {
     private String paterno;
     private String materno;
     private LocalDate fecha_nacimiento;
+    
+    public Persona(String tipo_documento, String nro_documento,
+        String nombre, String paterno, String materno,
+        LocalDate fecha_nacimiento) {
+
+        setTipo_documento(tipo_documento);
+        setNro_documento(nro_documento);
+        setNombre(nombre);
+        setPaterno(paterno);
+        setMaterno(materno);
+        setFecha_nacimiento(fecha_nacimiento);
+    }
+
+    public Persona() {
+    }
 
     public String getTipo_documento() {
         return tipo_documento;
     }
 
     public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
+        if (tipo_documento != null && (tipo_documento.equalsIgnoreCase("dni") || tipo_documento.equalsIgnoreCase("c.e"))) {
+            this.tipo_documento = tipo_documento;
+        } else {
+            System.out.println("Error: El tipo de documento debe ser DNI o C.E.");
+        }
     }
 
     public String getNro_documento() {
@@ -31,7 +50,25 @@ public class Persona {
     }
 
     public void setNro_documento(String nro_documento) {
-        this.nro_documento = nro_documento;
+        if (nro_documento != null && nro_documento.matches("\\d+")) {
+
+            if (tipo_documento != null && tipo_documento.equalsIgnoreCase("dni")
+                    && nro_documento.length() == 8) {
+
+                this.nro_documento = nro_documento;
+
+            } else if (tipo_documento != null && tipo_documento.equalsIgnoreCase("c.e")
+                && nro_documento.length() == 10) {
+
+                this.nro_documento = nro_documento;
+
+            } else {
+                System.out.println("Error: El DNI debe tener 8 digitos y el C.E. 10 digitos");
+            }
+
+        } else {
+            System.out.println("Error: El numero de documento debe contener solo números");
+        }
     }
 
     public String getNombre() {
@@ -66,5 +103,10 @@ public class Persona {
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Documento: " + tipo_documento + " " + nro_documento
+                + " | Nombre: " + nombre + " " + paterno + " " + materno
+                + " | Fecha de nacimiento: " + fecha_nacimiento;
+    }
 }
