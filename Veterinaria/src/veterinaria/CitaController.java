@@ -60,6 +60,18 @@ public class CitaController {
         return null;
     }
 
+    // Cambiar estado de cita
+    public void cambiarEstado(int id, String nuevoEstado) {
+
+        Cita cita = buscarPorId(id);
+
+        if (cita != null) {
+            cita.setEstado(nuevoEstado);
+            System.out.println("Estado actualizado correctamente");
+        } else {
+            System.out.println("Cita no encontrada");
+        }
+    }
   
 }
     
