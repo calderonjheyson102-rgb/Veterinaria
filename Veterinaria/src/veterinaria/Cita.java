@@ -17,7 +17,7 @@ public class Cita {
     private LocalDate fecha;
     private LocalTime hora;
 
-    public Cita(String id_cita, String motivo, String estado,
+    public Cita(int id_cita, String motivo, String estado,
         Mascota mascota, Personal personal,
         LocalDate fecha, LocalTime hora) {
 
@@ -129,10 +129,5 @@ public class Cita {
             + "\nHora: " + hora
             + "\nMascota: " + mascota
             + "\nPersonal: " + personal;
-    }
-
-    int getId_cita() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+    } 
 }
