@@ -72,7 +72,19 @@ public class CitaController {
             System.out.println("Cita no encontrada");
         }
     }
-  
+    
+    // Listar citas
+    public void listarCitas() {
+
+        if (citas.isEmpty()) {
+            System.out.println("No existen citas registradas");
+            return;
+        }
+
+        for (Cita c : citas) {
+            System.out.println(c);
+        }
+    }   
 }
     
     
