@@ -17,7 +17,7 @@ public class CitaController {
         citas = new ArrayList<>();
     }
     
-    
+    //Validar citas 
     public boolean validarId(int id) {
 
         if (id <= 0) {
