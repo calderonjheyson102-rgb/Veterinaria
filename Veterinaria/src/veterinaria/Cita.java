@@ -34,8 +34,8 @@ public class Cita {
     public Cita(){
         
     }
-    public Cita(int id_cita) {
-        this.id_cita = id_cita;
+    public int getId_cita() {
+        return id_cita;
     }
     public void setId_cita(int id_cita) {
         if (id_cita > 0){
