@@ -26,6 +26,12 @@ public class CitaController {
             );
         }
 
+        if (buscarPorId(id) != null) {
+            throw new IllegalArgumentException(
+                "ALERTA: EL ID DE CITA " + id + " YA EXISTE. INGRESE OTRO."
+            );
+        }
+
         return true;
     }
 
@@ -42,6 +48,19 @@ public class CitaController {
 
         System.out.println("Cita registrada correctamente");
     }   
+    // Buscar cita
+    public Cita buscarPorId(int id) {
+
+        for (Cita c : citas) {
+            if (c.getId_cita() == id) {
+                return c;
+            }
+        }
+
+        return null;
+    }
+
+  
 }
     
     
