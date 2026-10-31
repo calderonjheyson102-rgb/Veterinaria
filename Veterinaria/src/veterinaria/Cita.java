@@ -9,7 +9,7 @@ import java.time.LocalTime;
  * @author Anderson
  */
 public class Cita {
-    private String id_cita;
+    private int id_cita;
     private String motivo;
     private String estado;
     private Mascota mascota;
@@ -29,19 +29,19 @@ public class Cita {
         setFecha(fecha);
         setHora(hora);
 }
+
+
     public Cita(){
         
     }
-    
-    public String getId_cita() {
-        return id_cita;
+    public Cita(int id_cita) {
+        this.id_cita = id_cita;
     }
-
-    public void setId_cita(String id_cita) {
-        if(id_cita != null && id_cita.matches("[a-zA-Z0-9-]{2,10}")){
+    public void setId_cita(int id_cita) {
+        if (id_cita > 0){
             this.id_cita = id_cita;
         }else{
-            System.out.println("Error: El ID de la cita debe tener de 2 y 10 caracteres");
+            System.out.println("ERROR: EL id-cita DEBE SER MAYOR QUE CERO");
         }
     }
 
@@ -129,6 +129,10 @@ public class Cita {
             + "\nHora: " + hora
             + "\nMascota: " + mascota
             + "\nPersonal: " + personal;
+    }
+
+    int getId_cita() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
