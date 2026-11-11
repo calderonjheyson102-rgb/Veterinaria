@@ -17,6 +17,8 @@ public class Mascota {
     private String sexo;
     private Cliente duenio;
     
+    private final HistorialClinico historial = new HistorialClinico();
+
     public Mascota(int id_mascota, String nombre, String especie,
         String raza, double peso, String sexo, Cliente duenio) {
 
@@ -41,7 +43,7 @@ public class Mascota {
         if (id_mascota > 0) {
             this.id_mascota = id_mascota;
         } else {
-            System.out.println("Error: El ID debe ser mayor que cero.");
+            throw new IllegalArgumentException("Error: El ID debe ser mayor que cero.");
         }
     }
      public String getNombre() {
@@ -52,7 +54,7 @@ public class Mascota {
         if (nombre != null && nombre.trim().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{2,}")) {
             this.nombre = nombre.trim();
         } else {
-            System.out.println("Error: El nombre debe contener al menos 2 letras.");
+            throw new IllegalArgumentException("Error: El nombre debe contener al menos 2 letras.");
         }
     }
     public String getEspecie() {
@@ -63,7 +65,7 @@ public class Mascota {
         if (especie != null && especie.trim().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,}")) {
             this.especie = especie.trim();
         } else {
-            System.out.println("Error: Ingrese una especie valida. EJ (PERRO, GATO) ");
+            throw new IllegalArgumentException("Error: Ingrese una especie valida. EJ (PERRO, GATO) ");
         }
     }
     public String getRaza() {
@@ -74,7 +76,7 @@ public class Mascota {
         if (raza != null && !raza.trim().isEmpty()) {
             this.raza = raza.trim();
         } else {
-            System.out.println("Error: La raza no puede estar vacaa.");
+            throw new IllegalArgumentException("Error: La raza no puede estar vacia.");
         }
     }
     public double getPeso() {
@@ -85,7 +87,7 @@ public class Mascota {
         if (Double.isFinite(peso) && peso > 0 && peso <= 155) {
             this.peso = peso;
         } else {
-            System.out.println("Error: El peso debe ser mayor que cero y no superar los 155 kg.");
+            throw new IllegalArgumentException("Error: El peso debe ser mayor que cero y no superar los 155 kg.");
         }
     }
     public String getSexo() {
@@ -98,7 +100,7 @@ public class Mascota {
                 || sexo.equalsIgnoreCase("Hembra"))) {
             this.sexo = sexo;
         } else {
-            System.out.println("Error: El sexo debe ser Macho o Hembra.");
+            throw new IllegalArgumentException("Error: El sexo debe ser Macho o Hembra.");
         }
     }
     public Cliente getDuenio() {
@@ -109,8 +111,15 @@ public class Mascota {
         if (duenio != null) {
             this.duenio = duenio;
         } else {
-            System.out.println("Error: La mascota debe tener un dueño.");
+            throw new IllegalArgumentException("Error: La mascota debe tener un dueño.");
         }
+    }
+    public void agregarRegistroClinico(String diagnostico, String tratamiento) {
+        historial.agregarRegistro(diagnostico, tratamiento);
+    }
+ 
+    public HistorialClinico getHistorial() {
+        return historial;
     }
     @Override
     public String toString() {
@@ -124,4 +133,9 @@ public class Mascota {
                 + " " + duenio.getPaterno()
                 + " | DNI: " + duenio.getNro_documento();
     }
+    public void verDatos() {
+        System.out.println(this);
+        System.out.println("   Historial clinico (" + historial.cantidad() + " registros):");
+        historial.mostrar();
+    }      
 }
