@@ -39,7 +39,7 @@ public class Personal extends Persona {
         if (id_personal != null && id_personal.matches("[a-zA-Z0-9-]{2,10}")) {
             this.id_personal = id_personal;
         } else {
-            System.out.println("Error: El ID debe tener entre 2 y 10 caracteres.");
+            throw new IllegalArgumentException("Error: El ID debe tener entre 2 y 10 caracteres.");
         }
     }
 
@@ -51,7 +51,7 @@ public class Personal extends Persona {
         if (cargo != null && cargo.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,}")) {
             this.cargo = cargo;
         } else {
-            System.out.println("Error: Ingrese un cargo válido.");
+            throw new IllegalArgumentException("Error: Ingrese un cargo válido.");
         }
     }
 
@@ -63,7 +63,7 @@ public class Personal extends Persona {
         if (especialidad != null && especialidad.length() >= 3) {
             this.especialidad = especialidad;
         } else {
-            System.out.println("Error: La especialidad debe tener mínimo 3 caracteres.");
+            throw new IllegalArgumentException("Error: La especialidad debe tener mínimo 3 caracteres.");
         }
     }
 
@@ -72,10 +72,10 @@ public class Personal extends Persona {
     }
 
     public void setSueldo(double sueldo) {
-        if (sueldo >= 0) {
+        if (sueldo > 0) {
             this.sueldo = sueldo;
         } else {
-            System.out.println("Error: El sueldo debe ser mayor que cero.");
+            throw new IllegalArgumentException("Error: El sueldo debe ser mayor que cero.");
         }
     }
 

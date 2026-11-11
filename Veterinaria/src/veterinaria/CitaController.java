@@ -84,7 +84,11 @@ public class CitaController {
         for (Cita c : citas) {
             System.out.println(c);
         }
-    }   
+    }  
+    // Obtener las citas registradas
+    public ArrayList<Cita> getCitas() {
+        return new ArrayList<>(citas);
+    }
 }
     
     

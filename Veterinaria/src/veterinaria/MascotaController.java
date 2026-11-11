@@ -73,6 +73,10 @@ public class MascotaController {
         for (Mascota m : mascotas) {
             System.out.println(m);
         }
+    }  
+    // Obtener una copia de la lista de mascotas registradas
+    public ArrayList<Mascota> getMascotas() {
+        return new ArrayList<>(mascotas);
     }
- 
+
 }

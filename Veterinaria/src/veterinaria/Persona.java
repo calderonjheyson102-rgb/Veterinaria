@@ -41,7 +41,7 @@ public class Persona {
         if (tipo_documento != null && (tipo_documento.equalsIgnoreCase("dni") || tipo_documento.equalsIgnoreCase("c.e"))) {
             this.tipo_documento = tipo_documento;
         } else {
-            System.out.println("Error: El tipo de documento debe ser DNI o C.E.");
+            throw new IllegalArgumentException("Error: El tipo de documento debe ser DNI o C.E.");
         }
     }
 
@@ -63,11 +63,11 @@ public class Persona {
                 this.nro_documento = nro_documento;
 
             } else {
-                System.out.println("Error: El DNI debe tener 8 digitos y el C.E. 10 digitos");
+                throw new IllegalArgumentException("Error: El DNI debe tener 8 digitos y el C.E. 10 digitos");
             }
 
         } else {
-            System.out.println("Error: El numero de documento debe contener solo numeros");
+            throw new IllegalArgumentException("Error: El numero de documento debe contener solo numeros");
         }
     }
 
@@ -83,11 +83,11 @@ public class Persona {
                 this.nombre = nombre;
             } else 
             {
-                System.out.println("ERROR: EL NOMBRE DEBE TENER MINIMO 2 CARACTERES");
+                throw new IllegalArgumentException("ERROR: EL NOMBRE DEBE TENER MINIMO 2 CARACTERES");
             }
         } else 
         {
-            System.out.println("ERROR, EL NOMBRE DEBE CONTENER SOLO LETRAS");
+            throw new IllegalArgumentException("ERROR, EL NOMBRE DEBE CONTENER SOLO LETRAS");
         } 
     }
 
@@ -103,11 +103,11 @@ public class Persona {
                 this.paterno = paterno.trim();
             }else{
                 
-                System.out.println("ERROR, El apellido paterno debe tener al menos 2 caracteres");
+                throw new IllegalArgumentException("ERROR, El apellido paterno debe tener al menos 2 caracteres");
             }
         }else 
         {
-            System.out.println("ERROR, EL APELLIDO PATERNO DEBE CONTENER SOLO LETRAS");
+            throw new IllegalArgumentException("ERROR, EL APELLIDO PATERNO DEBE CONTENER SOLO LETRAS");
         }
     }
 
@@ -123,11 +123,11 @@ public class Persona {
                 this.materno = materno.trim();
             }else{
                 
-                System.out.println("ERROR, El apellido materno debe tener al menos 2 caracteres");
+                throw new IllegalArgumentException("ERROR, El apellido materno debe tener al menos 2 caracteres");
             }
         }else 
         {
-            System.out.println("ERROR, EL APELLIDO MATERNO DEBE CONTENER SOLO LETRAS");
+            throw new IllegalArgumentException("ERROR, EL APELLIDO MATERNO DEBE CONTENER SOLO LETRAS");
         }
     }
 
@@ -143,7 +143,7 @@ public class Persona {
         this.fecha_nacimiento = fecha_nacimiento;
 
         } else {
-            System.out.println("Error: La fecha de nacimiento no es valida.");
+            throw new IllegalArgumentException("Error: La fecha de nacimiento no es valida.");
         }
     }
     

@@ -19,8 +19,10 @@ public class Cliente extends Persona{
                LocalDate fecha_nacimiento,
                String telefono, String correo) {
 
-    super(tipo_documento, nro_documento, nombre, paterno,
-            materno, fecha_nacimiento);
+        super(tipo_documento, nro_documento, nombre, paterno,
+                materno, fecha_nacimiento);
+        setTelefono(telefono);
+        setCorreo(correo);
     }
 
     public Cliente() {
@@ -34,7 +36,7 @@ public class Cliente extends Persona{
         if (telefono != null && telefono.matches("\\d{9}")) {
             this.telefono = telefono;
         }else 
-            System.out.println("EL TELEFONO DEBE TENER 9 DIGITOS");
+            throw new IllegalArgumentException("EL TELEFONO DEBE TENER 9 DIGITOS");
     }
 
     public String getCorreo() {
@@ -45,7 +47,7 @@ public class Cliente extends Persona{
         if (correo != null && correo.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
             this.correo = correo;
         } else {
-            System.out.println("Error: El correo electronico no tiene un formato valido.");
+            throw new IllegalArgumentException("Error: El correo electronico no tiene un formato valido.");
         }
     }
     

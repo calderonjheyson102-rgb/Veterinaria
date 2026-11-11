@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package veterinaria;
+//import java.time.LocalDate;
+//import java.time.LocalTime;
+
+import Vista.Principal;
+import javax.swing.JFrame;
+
 
 /**
  *
@@ -15,6 +21,7 @@ public class Veterinaria {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        JFrame p1 = new Principal();
+        p1.setVisible(true);
     }  
 }

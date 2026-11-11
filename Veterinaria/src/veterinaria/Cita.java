@@ -41,7 +41,7 @@ public class Cita {
         if (id_cita > 0){
             this.id_cita = id_cita;
         }else{
-            System.out.println("ERROR: EL id-cita DEBE SER MAYOR QUE CERO");
+            throw new IllegalArgumentException("ERROR: EL id-cita DEBE SER MAYOR QUE CERO");
         }
     }
 
@@ -53,7 +53,7 @@ public class Cita {
         if(motivo != null && motivo.length() >= 5){
             this.motivo = motivo;
         }else{
-            System.out.println("Error: El motivo debe de tener c5 caracteres ");
+            throw new IllegalArgumentException("Error: El motivo debe de tener c5 caracteres ");
         }
     }
 
@@ -68,7 +68,7 @@ public class Cita {
             || estado.equalsIgnoreCase("Cancelada"))) {
             this.estado = estado;
         } else {
-            System.out.println("Error: El estado debe ser Pendiente, Atendida o Cancelada.");
+            throw new IllegalArgumentException("Error: El estado debe ser Pendiente, Atendida o Cancelada.");
         }
     }
 
@@ -80,7 +80,7 @@ public class Cita {
         if(mascota != null){
             this.mascota = mascota;
         }else{
-            System.out.println("Error: Debe de asignar una mascota a la cita");
+            throw new IllegalArgumentException("Error: Debe de asignar una mascota a la cita");
         }
     }
 
@@ -92,7 +92,7 @@ public class Cita {
         if(personal != null){
             this.personal = personal;
         }else{
-            System.out.println("Error: Debe de asignar un responsable a la cita");
+            throw new IllegalArgumentException("Error: Debe de asignar un responsable a la cita");
         }
     }
 
@@ -104,7 +104,7 @@ public class Cita {
         if (fecha != null && !fecha.isBefore(LocalDate.now())) {
             this.fecha = fecha;
         } else {
-            System.out.println("Error: La fecha de la cita no puede ser anterior a hoy.");
+            throw new IllegalArgumentException("Error: La fecha de la cita no puede ser anterior a hoy.");
         }
     }
 
@@ -116,7 +116,7 @@ public class Cita {
         if (hora != null) {
             this.hora = hora;
         } else {
-            System.out.println("Error: Debe ingresar una hora válida.");
+            throw new IllegalArgumentException("Error: Debe ingresar una hora válida.");
         }
     }
 
